@@ -1,5 +1,5 @@
 const readline = require('readline');
-const version = '1.0.0';
+const version = '1.0.1';
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
@@ -77,11 +77,28 @@ function working(){
   function(a){
     switch(ans(a)){
       case ANS.Y:
-        return ass();
+        return lonely();
         break;
       case ANS.N:
         return work();
         break;
+      default:
+        what(a);
+        return eat();
+        break;
+    }
+  });
+}
+function lonely(){
+  ask('is he lonely',
+  function(a){
+    switch(ans(a)){
+      case ANS.Y:
+        say('tell him a joke or something');
+        return exit();
+      case ANS.N:
+        return ass();
+        return 
       default:
         what(a);
         return eat();
