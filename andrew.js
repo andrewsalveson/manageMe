@@ -94,15 +94,12 @@ function lonely(){
   function(a){
     switch(ans(a)){
       case ANS.Y:
-        say('tell him a joke or something');
-        return exit();
+        return joke();
       case ANS.N:
         return ass();
-        return 
       default:
         what(a);
         return eat();
-        break;
     }
   });
 }
@@ -116,6 +113,13 @@ function work(){
 }
 function food(){
   say(`he needs to eat then he'll calm down`);
+  return exit();
+}
+function joke(){
+  say('tell him a joke or something; here\'s one:');
+  say(`A priest, a pastor, and a rabbit entered a clinic to donate blood. The nurse asked the rabbit, "What's your blood type?"
+
+"I'm probably a type O," said the rabbit.`);
   return exit();
 }
 function start(){
